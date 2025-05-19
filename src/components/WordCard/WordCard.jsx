@@ -1,13 +1,13 @@
 import React from "react";
+import styles from "./WordCard.module.css";
 
 const WordCard = ({ info }) => {
-    const { english, transcription, translation, tags} = info;
+    const { english, transcription, translation} = info;
     return (
-        <div> 
+        <div className={styles.card}> 
             <div>{english}</div>
             <div>{transcription}</div>
             <div>{translation}</div>
-            <div>{tags}</div>
         </div>
     )
 };

@@ -1,0 +1,17 @@
+.tableConteiner{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.table{
+    border: 1px solid gray;
+    width: 90%;
+    margin: 50px auto;
+    border-collapse: collapse;
+    background-color: #fcf5fc;
+}
+.title{
+    text-align: left;
+    padding: 10px 0;
+}
