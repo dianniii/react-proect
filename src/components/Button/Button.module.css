@@ -1,0 +1,13 @@
+.primary{
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 2px solid rgb(41, 240, 117);
+    cursor: pointer;
+}
+
+.secondary{
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 2px solid rgb(235, 23, 8);
+    cursor: pointer;
+}

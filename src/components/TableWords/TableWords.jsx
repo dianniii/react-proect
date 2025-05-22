@@ -6,14 +6,13 @@ import styles from "./TableWords.module.css";
 
 function TableWords() {
     return (
-    <div className={styles.tableConteiner}>
         <table className={styles.table}>
             <thead>
-                <tr>
-                    <th className={styles.title}>English</th>
-                    <th className={styles.title}>Transcription</th>
-                    <th className={styles.title}>Translation</th>
-                    <th className={styles.title}>Action</th>
+                <tr className={styles.headerRow}>
+                    <th className={styles.headerCell}>ENGLISH</th>
+                    <th className={styles.headerCell}>TRANSCRIPTION</th>
+                    <th className={styles.headerCell}>TRANSLATION</th>
+                    <th className={styles.headerCell}>ACTION</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,7 +23,6 @@ function TableWords() {
                 }
             </tbody>
         </table>
-    </div>
     );
 }
 
