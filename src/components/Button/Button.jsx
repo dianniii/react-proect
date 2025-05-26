@@ -2,7 +2,7 @@ import React from "react";
 import styles from './Button.module.css';
 
 const Button = ({ text, type, onClick }) => {
-    return <button onClick={onClick} className={type ==='primary' ? styles.primary : styles.secondary}>{text}</button>;
+    return <button onClick={onClick} className={type ==='close' ? styles.close : styles.check}>{text}</button>;
 };
 
 export default Button;

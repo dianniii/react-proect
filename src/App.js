@@ -1,12 +1,15 @@
 import Header from './components/Layout/Header';
-import MainPage from './components/MainPage/MainPage';
+import WordsCardList from './components/WordsCardList/WordsCardList ';
+import TableWords from './components/TableWords/TableWords'
+
 
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <MainPage />
+      <WordsCardList />
+      <TableWords/>
     </div>
   );
 }

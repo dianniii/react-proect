@@ -15,70 +15,70 @@ export const WordsData =[
     },
     {
         "id": "3",
-        "english": "peace",
+        "english": "Peace",
         "transcription": "[piːs]",
         "translation": "мир",
         "tags": "",
     },
     {
         "id": "4",
-        "english": "overwhelming",
+        "english": "Overwhelming",
         "transcription": "[əʊvərˈwelmɪŋ]",
         "translation": "ошеломляющий",
         "tags": ""
     },
     {
         "id": "5",
-        "english": "forecast",
+        "english": "Forecast",
         "transcription": "[ˈfɔːrkæst]",
         "translation": "прогноз",
         "tags": ""
     },
     {
         "id": "6",
-        "english": "mosquito",
+        "english": "Mosquito",
         "transcription": "[məˈskiː.təʊ]",
         "translation": "комар",
         "tags": ""
     },
     {
         "id": "7",
-        "english": "tornado",
+        "english": "Tornado",
         "transcription": "[tɔːˈneɪ.dəʊ]",
         "translation": "торнадо",
         "tags": "weather"
     },
     {
         "id": "8",
-        "english": "scrooge",
+        "english": "Scrooge",
         "transcription": "[skruːdʒ]",
         "translation": "скряга",
         "tags": ""
     },
     {
         "id": "9",
-        "english": "cat",
+        "english": "Cat",
         "transcription": "[cæt]",
         "translation": "кот",
         "tags": ""
     },
     {
         "id": "10",
-        "english": "hang out",
+        "english": "Hang out",
         "transcription": "[ˈhæŋ ˈaʊt]",
         "translation": "тусоваться",
         "tags": ""
     },
     {
         "id": "11",
-        "english": "girl",
+        "english": "Girl",
         "transcription": "[ɡɜːrl]",
         "translation": "девочка",
         "tags": ""
     },
     {
         "id": "12",
-        "english": "curious",
+        "english": "Curious",
         "transcription": "[ˈkjʊrɪəs]",
         "translation": "любопытный ",
         "tags": ""
