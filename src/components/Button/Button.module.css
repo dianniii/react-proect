@@ -9,6 +9,7 @@
 .check:hover {
     background-color:rgb(41, 240, 117);
     color: white;
+    transform: scale(1.1);
 }
 
 .close{
@@ -21,4 +22,5 @@
 .close:hover{
     background-color: rgb(235, 23, 8);
     color: white;
+    transform: scale(1.1);
 }

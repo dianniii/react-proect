@@ -1,0 +1,15 @@
+.cardWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+}
+.cardControls{
+    display: flex;
+    align-items: center;
+    gap: 24px; /* Расстояние между кнопками и children */
+    margin-bottom: 16px;
+}
+.result{
+    margin-bottom: 10px;
+}
