@@ -1,13 +1,15 @@
-.check{
+.check, .close{
     margin: 12px 0;
     padding: 6px 12px;
     border-radius: 4px;
-    border: 2px solid rgb(41, 240, 117);
+    color: #4f4032;
+    border: 2px solid #88a763;
+    background-color: white;
     cursor: pointer;
     font-weight: 600;
 }
 .check:hover {
-    background-color:rgb(41, 240, 117);
+    background-color: #88a763;
     color: white;
     transform: scale(1.1);
 }
@@ -15,12 +17,14 @@
 .close{
     padding: 6px 12px;
     border-radius: 4px;
-    border: 2px solid rgb(235, 23, 8);
+    border: 2px solid #845404;
+    background-color: white;
+    color: #4f4032;
     cursor: pointer;
     font-weight: 600;
 }
 .close:hover{
-    background-color: rgb(235, 23, 8);
+    background-color: #845404;
     color: white;
     transform: scale(1.1);
 }

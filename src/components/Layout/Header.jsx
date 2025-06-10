@@ -1,20 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from './Header.module.css';
+import logo from '../../assets/book_4165304.png';
 
 function Header () {
     return (
-        <header>
-            <h1>English Vocabulary</h1>
+        <header className={styles.headerConteiner}>
+            <Link className={styles.conteinerLogo} to={'/home'}>
+                <img className={styles.logo} src={logo} alt="Logo"/>
+                <h1 className={styles.title}>ENG</h1>
+            </Link>
             <nav>
-                <ul>
+                <ul className={styles.nav}>
                     <li>
-                        <Link to={'/'}>HOME </Link >
+                        <Link to={'/home'} className={styles.itemsNav}>HOME </Link >
                     </li>
                     <li>
-                        <Link to={'/training'}>TRAINING </Link >
+                        <Link to={'/training'} className={styles.itemsNav}>TRAINING </Link >
                     </li>
                     <li>
-                        <Link to={'/words'}>ALL THE WORDS </Link >
+                        <Link to={'/words'} className={styles.itemsNav}>WORDS </Link >
                     </li>
                 </ul>
             </nav>
