@@ -8,10 +8,10 @@
     cursor: pointer;
     font-weight: 600;
 }
-.check:hover {
+.check:hover, .check:focus {
     background-color: #88a763;
     color: white;
-    transform: scale(1.1);
+    transform: scale(1.3);
 }
 
 .close{
@@ -23,7 +23,7 @@
     cursor: pointer;
     font-weight: 600;
 }
-.close:hover{
+.close:hover, .close:focus {
     background-color: #845404;
     color: white;
     transform: scale(1.1);

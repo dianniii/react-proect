@@ -1,4 +1,4 @@
-import React from "react";
+
 import {WordsData} from "../../WordData/WordsData";
 import WordCard from "../WordCard/WordCard";
 import styles from "./WordsCardList.module.css";

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CardWrapper.module.css';
 
-const CardWrapper = ({ children, onPrev, onNext, currentIndex, total }) => {
+const CardWrapper = ({ children, onPrev, onNext, currentIndex, total, wordsLearned }) => {
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.cardControls}>
@@ -25,6 +25,9 @@ const CardWrapper = ({ children, onPrev, onNext, currentIndex, total }) => {
       </div>
     <div className={styles.result}>
       {currentIndex + 1}/{total}
+    </div>
+    <div className={styles.learned}>
+      Words learned per workout: {wordsLearned}
     </div>
     </div>
   );

@@ -1,15 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./WordCard.module.css";
 import Button from "../Button/Button";
 
-const WordCard = ({ info }) => {
+const WordCard = ({ info, onViewTranslation }) => {
     const [isButtonPressed, setIsButtonPressed] = useState(false);
 
     const { english, transcription, translation } = info;
 
     const handleButtonClick = () => {
+        if (!isButtonPressed && onViewTranslation){
+            onViewTranslation();
+        }
         setIsButtonPressed((prev) => !prev);
     };
+
+    const buttonRef = useRef(null);
+
+    useEffect(() => {
+        if (buttonRef.current){
+            console.log("Button element:", buttonRef.current);
+            buttonRef.current.focus();
+        }
+    }, [info]); //эффект запускается каждый раз при смене карточки 
 
     return (
         <div className={styles.cardContent}>
@@ -23,7 +35,7 @@ const WordCard = ({ info }) => {
                     </div>
                 </div>
             ) : (
-                <Button type='check' text="Check" onClick={handleButtonClick} />
+                <Button ref={buttonRef} type='check' text="Check" onClick={handleButtonClick} />
             )}
         </div>
     );

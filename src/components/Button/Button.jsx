@@ -1,8 +1,17 @@
-import React from "react";
+import React, { forwardRef } from 'react';
 import styles from './Button.module.css';
 
-const Button = ({ text, type, onClick }) => {
-    return <button onClick={onClick} className={type ==='close' ? styles.close : styles.check}>{text}</button>;
-};
+const Button = forwardRef(({ type, text, onClick }, ref) => {
+    return (
+        <button 
+            ref={ref}
+            onClick={onClick}
+            className={type === 'close' ? styles.close : styles.check}
+        >
+            {text}
+        </button>
+    );
+});
 
 export default Button;
+
