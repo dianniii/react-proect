@@ -16,9 +16,14 @@ function TableRow({ word }) {
     setValue({ ...word });
   };
 
+  const isAnyFieldEmpty = !value.english.trim() ||
+                          !value.transcription.trim() ||
+                          !value.translation.trim();
+
   const handleSave = () => {
     setIsEditing(prev => !prev);
   };
+
 
   const handleEdit = () => {
     setIsEditing(prev => !prev);
@@ -31,29 +36,38 @@ function TableRow({ word }) {
     }));
   };
 
+  const isEmpty = val => !val.trim();
+
    return isEditing ? (
     <tr className={styles.row}>
       <td className={styles.headerCell}>
         <input type="text"
                 value={value.english}
                 name={"english"}
-                onChange={handleChange} />
+                onChange={handleChange} 
+                className={isEmpty(value.english)
+                                  ? styles.invalid : ''}/>
       </td>
       <td className={styles.headerCell}>
         <input type="text"
                 value={value.transcription}
                 name={"transcription"}
-                onChange={handleChange} />
+                onChange={handleChange}
+                className={isEmpty(value.transcription)
+                                  ? styles.invalid : ''} />
       </td>
       <td className={styles.headerCell}>
         <input type="text"
                 value={value.translation}
                 name={"translation"}
-                onChange={handleChange} />
+                onChange={handleChange}
+                className={isEmpty(value.translation)
+                                  ? styles.invalid : ''}/>
       </td>
       <td className={styles.headerCell}>
         <button className={styles.buttonSave}
-                onClick={handleSave}>Save</button>
+                onClick={handleSave}
+                disabled={isAnyFieldEmpty}>Save</button>
         <button className={styles.buttonClose}
                 onClick={handleClose}>Close</button>
       </td>
