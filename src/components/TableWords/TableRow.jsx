@@ -19,6 +19,7 @@ function TableRow({ word }) {
   const isAnyFieldEmpty = !value.english.trim() ||
                           !value.transcription.trim() ||
                           !value.translation.trim();
+  // если хотя бы одно поле пустое то кнопка заблокирована
 
   const handleSave = () => {
     setIsEditing(prev => !prev);
@@ -37,6 +38,7 @@ function TableRow({ word }) {
   };
 
   const isEmpty = val => !val.trim();
+  // проверка отдельных полей на заполненность для применения стилей
 
    return isEditing ? (
     <tr className={styles.row}>
