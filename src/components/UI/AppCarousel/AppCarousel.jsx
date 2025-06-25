@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from "react";
-import CardWrapper from "../CardWrapper/CardWrapper";
-import WordCard from "../WordCard/WordCard";
+import CardWrapper from "../AppCardWrapper/AppWrapper";
+import WordCard from "../../WordCard/WordCard";
 
 const Carousel = ({ data }) => {
   const [wordsLearned, setWordsLearned] = useState(0);

@@ -1,27 +1,33 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Header from './components/Layout/Header';
-import WordsCardList from './components/WordsCardList/WordsCardList';
-import TableWords from './components/TableWords/TableWords'
-import Carusel from './components/Carusel/Carusel';
-import { WordsData } from './WordData/WordsData';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import NotFoundPage from './components/NotFoundPage/NotFoundPage';
+import { WordsData } from './data/WordsData';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ROUTES } from './components/routes';
 
-function App() {
+
+function App() {  
+  const WordsCardList = React.lazy(() => import('./components/WordsCardList/WordsCardList'));
+  const TableWords = React.lazy(() => import('./components/Table/TableWords'));
+  const Carusel = React.lazy(() => import('./components/UI/AppCarousel/AppCarousel'));
+  const NotFoundPage = React.lazy(() => import('./components/NotFoundPage/NotFoundPage'));
 
   return (
     <Router>
       <div className="App">
         <Header />
-        <Routes>
-          <Route path='/home' element={<TableWords />} />
-          <Route path='/training' element={<Carusel  data={WordsData}/>} />
-          <Route path='/words' element={<WordsCardList />} />
-          <Route path="*" element={<NotFoundPage />}/>
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path={ROUTES.HOME} element={<TableWords />} />
+            <Route path={ROUTES.TRAIN} element={<Carusel data={WordsData} />} />
+            <Route path={ROUTES.WORDS} element={<WordsCardList />} />
+            <Route path={ROUTES.NOT_FOUND} element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
       </div>
     </Router>
   );
 }
 
 export default App;
+
+

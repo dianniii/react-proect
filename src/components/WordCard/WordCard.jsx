@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./WordCard.module.css";
-import Button from "../Button/Button";
+import Button from "../UI/AppButton/AppButton";
 
 const WordCard = ({ info, onViewTranslation }) => {
     const [isButtonPressed, setIsButtonPressed] = useState(false);
@@ -18,7 +18,6 @@ const WordCard = ({ info, onViewTranslation }) => {
 
     useEffect(() => {
         if (buttonRef.current){
-            console.log("Button element:", buttonRef.current);
             buttonRef.current.focus();
         }
     }, [info]); //эффект запускается каждый раз при смене карточки 

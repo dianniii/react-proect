@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './CardWrapper.module.css';
+import styles from './AppCardWrapper.module.css';
 
 const CardWrapper = ({ children, onPrev, onNext, currentIndex, total, wordsLearned }) => {
   return (

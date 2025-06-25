@@ -1,5 +1,5 @@
 
-import {WordsData} from "../../WordData/WordsData";
+import {WordsData} from "../../data/WordsData";
 import WordCard from "../WordCard/WordCard";
 import styles from "./WordsCardList.module.css";
 

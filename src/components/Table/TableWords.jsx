@@ -1,7 +1,7 @@
 import React from "react";
-import {WordsData} from "../../WordData/WordsData";
+import {WordsData} from "../../data/WordsData";
 import TableRow from "./TableRow";
-import styles from "./TableWords.module.css";
+import styles from "./Table.module.css";
 
 
 function TableWords() {
