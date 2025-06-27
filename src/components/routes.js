@@ -1,6 +1,6 @@
 export const ROUTES = {
-    HOME: '/home',
-    TRAIN: '/training',
+    HOME: '/',
+    TRAIN: '/train',
     WORDS: '/words',
     NOT_FOUND: '*'
 };

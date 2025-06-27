@@ -7,13 +7,13 @@ function TableRow({ word }) {
   const [value, setValue] = useState({
     english: word.english,
     transcription: word.transcription,
-    translation: word.translation,
+    russian: word.russian,
   });
 
   const [errors, setErrors] = useState({
     english: false,
     transcription: false,
-    translation: false
+    russian: false
   });
   // Проверка на пустоту
   const isEmpty = (val) => !val.trim();
@@ -29,7 +29,7 @@ function TableRow({ word }) {
     let newErrors = {
       english: false,
       transcription: false,
-      translation: false
+      russian: false
     };
     let isValid = true;
 
@@ -46,8 +46,8 @@ function TableRow({ word }) {
     }
 
     // translation: без цифр*
-    if (isEmpty(value.translation) || hasNumbers(value.translation)) {
-      newErrors.translation = true;
+    if (isEmpty(value.russian) || hasNumbers(value.russian)) {
+      newErrors.russian = true;
       isValid = false;
     }
 
@@ -61,7 +61,7 @@ function TableRow({ word }) {
     setErrors({
       english: false,
       transcription: false,
-      translation: false
+      russian: false
     });
   };
 
@@ -72,7 +72,7 @@ function TableRow({ word }) {
       setErrors({
         english: false,
         transcription: false,
-        translation: false
+        russian: false
       });
     } else {
       alert("Check the data accuracy: the 'english' field should contain only Latin letters, and all fields should not contain numbers.");
@@ -98,7 +98,7 @@ function TableRow({ word }) {
 
   const isAnyFieldEmpty = !value.english.trim() ||
                           !value.transcription.trim() ||
-                          !value.translation.trim();
+                          !value.russian.trim();
 
   return isEditing ? (
     <tr className={styles.row}>
@@ -130,12 +130,12 @@ function TableRow({ word }) {
       <td className={styles.headerCell}>
         <input
           type="text"
-          value={value.translation}
-          name="translation"
+          value={value.russian}
+          name="russian"
           onChange={handleChange}
           className={
-            `${isEmpty(value.translation) ? styles.invalid : ''}
-            ${errors.translation ? styles.invalid : ''}`
+            `${isEmpty(value.russian) ? styles.invalid : ''}
+            ${errors.russian ? styles.invalid : ''}`
           }
         />
       </td>
@@ -154,7 +154,7 @@ function TableRow({ word }) {
     <tr className={styles.row}>
       <td className={styles.headerCell}>{value.english}</td>
       <td className={styles.headerCell}>{value.transcription}</td>
-      <td className={styles.headerCell}>{value.translation}</td>
+      <td className={styles.headerCell}>{value.russian}</td>
       <td className={styles.headerCell}>
         <button className={styles.buttonEdit}
                 onClick={handleEdit}>Edit</button>

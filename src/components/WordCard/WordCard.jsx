@@ -2,25 +2,30 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./WordCard.module.css";
 import Button from "../UI/AppButton/AppButton";
 
-const WordCard = ({ info, onViewTranslation }) => {
+const WordCard = ({ word, onViewTranslation }) => { 
     const [isButtonPressed, setIsButtonPressed] = useState(false);
-
-    const { english, transcription, translation } = info;
-
-    const handleButtonClick = () => {
-        if (!isButtonPressed && onViewTranslation){
-            onViewTranslation();
-        }
-        setIsButtonPressed((prev) => !prev);
-    };
-
     const buttonRef = useRef(null);
 
     useEffect(() => {
-        if (buttonRef.current){
+        if (buttonRef.current) {
             buttonRef.current.focus();
         }
-    }, [info]); //эффект запускается каждый раз при смене карточки 
+    }, [word]);
+
+    if (!word) {
+        return null;
+    }
+    
+    // Предположим, что word = { english, transcription, russian }
+    const { english, transcription, russian } = word;
+
+    // Обработчик для кнопки
+    const handleButtonClick = () => {
+        setIsButtonPressed(!isButtonPressed);
+        if (!isButtonPressed && typeof onViewTranslation === 'function') {
+            onViewTranslation();
+        }
+    };
 
     return (
         <div className={styles.cardContent}>
@@ -28,7 +33,7 @@ const WordCard = ({ info, onViewTranslation }) => {
             <div className={styles.cardDetails}>{transcription}</div>
             {isButtonPressed ? (
                 <div>
-                    <div className={styles.cardDetails}>{translation}</div>
+                    <div className={styles.cardDetails}>{russian}</div>
                     <div className={styles.buttonWrapper}>
                         <Button type='close' text="Close" onClick={handleButtonClick} />
                     </div>
@@ -41,6 +46,5 @@ const WordCard = ({ info, onViewTranslation }) => {
 };
 
 export default WordCard;
-
 
 
