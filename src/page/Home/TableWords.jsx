@@ -1,23 +1,12 @@
-import React, { useEffect, useState } from "react";
 import TableRow from "./TableRow";
 import styles from "./Table.module.css";
-import ErrorBoundary from "../ErrorBoundary";
-import { fetchWords } from "../api";
+import ErrorBoundary from "../../components/ErrorBoundary/ErrorBoundary";
+import useFetchWords from "../../hooks/useFetchWords";
 
 
 function TableWords() {
-    const [words, setWords] = useState([]);
-    useEffect(() => {
-            const loadWords = async () => {
-                try {
-                    const words = await fetchWords();
-                    setWords(words);
-                } catch (error) {
-                }
-            };
-            loadWords();
-            }, []);
-    
+    const { words, loading } = useFetchWords();
+
     return (
         <table className={styles.table}>
             <thead>
@@ -29,13 +18,17 @@ function TableWords() {
                 </tr>
             </thead>
             <tbody>
-                {
+                {loading ? (
+                    <tr>
+                        <td colSpan="4" className={styles.loader}>Loading...</td>
+                    </tr>
+                ) : (
                     words.map((word) => (
                         <ErrorBoundary key={word.id}>
                             <TableRow key={word.id} word={word} />
                         </ErrorBoundary>
                     ))
-                }
+                )}
             </tbody>
         </table>
     );

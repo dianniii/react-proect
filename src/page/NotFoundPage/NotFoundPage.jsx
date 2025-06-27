@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import notFoundPage from '../../assets/20.png';
 import styles from './NotFoundPage.module.css';
 import error from '../../assets/404.png';
-import { ROUTES } from '../routes';
+import { ROUTES } from '../../routes';
 
 function NotFoundPage (){
     return (

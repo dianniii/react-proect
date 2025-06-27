@@ -16,10 +16,8 @@ class ErrorBoundary extends Component {
 
   render() {
     if (this.state.hasError) {
-      // Можно отобразить резервный UI
-      return <h2>Упс! Что-то пошло не так.</h2>;
+      return <h2>Oops! Something went wrong.</h2>;
     }
-
     return this.props.children; 
   }
 }

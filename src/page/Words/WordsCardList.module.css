@@ -5,3 +5,9 @@
     margin: 140px 20px;
     justify-content: space-around;
 }
+.loader {
+    display: block; 
+    text-align: center;
+    font-weight: bold;
+    color: #4f4032;
+}

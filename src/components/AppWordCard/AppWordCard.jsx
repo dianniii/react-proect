@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import styles from "./WordCard.module.css";
-import Button from "../UI/AppButton/AppButton";
+import styles from "./AppWordCard.module.css";
+import Button from "../AppButton/AppButton";
 
 const WordCard = ({ word, onViewTranslation }) => { 
     const [isButtonPressed, setIsButtonPressed] = useState(false);
@@ -11,15 +11,13 @@ const WordCard = ({ word, onViewTranslation }) => {
             buttonRef.current.focus();
         }
     }, [word]);
-
+    
     if (!word) {
         return null;
     }
     
-    // Предположим, что word = { english, transcription, russian }
     const { english, transcription, russian } = word;
 
-    // Обработчик для кнопки
     const handleButtonClick = () => {
         setIsButtonPressed(!isButtonPressed);
         if (!isButtonPressed && typeof onViewTranslation === 'function') {
